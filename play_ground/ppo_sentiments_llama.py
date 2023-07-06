@@ -40,8 +40,8 @@ def llama_config():
             checkpoint_dir="/data/zangyuchen/trlx/tmp/ckpts",
             save_best=True,
         ),
-        model=ModelConfig(model_path="/data-ai/model/gpt2", num_layers_unfrozen=2),
-        tokenizer=TokenizerConfig(tokenizer_path="/data-ai/model/gpt2", truncation_side="right"),
+        model=ModelConfig(model_path="/data-ai/model/gptj", num_layers_unfrozen=2),
+        tokenizer=TokenizerConfig(tokenizer_path="/data-ai/model/gptj", truncation_side="right"),
         optimizer=OptimizerConfig(
             name="adamw", kwargs=dict(lr=1.0e-5, betas=(0.9, 0.95), eps=1.0e-8, weight_decay=1.0e-6)
         ),
