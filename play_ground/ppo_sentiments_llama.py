@@ -8,7 +8,8 @@ from typing import List
 import torch
 from datasets import load_dataset
 from transformers import pipeline
-
+# import wandb
+# wandb.login()
 import trlx
 from trlx.data.default_configs import (
     ModelConfig,
@@ -40,8 +41,8 @@ def llama_config():
             checkpoint_dir="/data/zangyuchen/trlx/tmp/ckpts",
             save_best=True,
         ),
-        model=ModelConfig(model_path="/data-ai/model/gptj", num_layers_unfrozen=2),
-        tokenizer=TokenizerConfig(tokenizer_path="/data-ai/model/gptj", truncation_side="right"),
+        model=ModelConfig(model_path="/data-ai/model/vicuna-13b-v1.3", num_layers_unfrozen=2),
+        tokenizer=TokenizerConfig(tokenizer_path="/data-ai/model/vicuna-13b-v1.3", truncation_side="right"),
         optimizer=OptimizerConfig(
             name="adamw", kwargs=dict(lr=1.0e-5, betas=(0.9, 0.95), eps=1.0e-8, weight_decay=1.0e-6)
         ),
